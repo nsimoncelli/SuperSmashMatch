@@ -74,7 +74,6 @@ aside {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(../../assets/images/dan.jpg);
 }
 
 .masterStatsDiv {
@@ -102,4 +101,18 @@ aside {
 
 .hidden {
     display: none;
+}
+
+.dan {
+    background-image: url("../../assets/images/dan.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.brett {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../../assets/images/brett.jpg");
 }
