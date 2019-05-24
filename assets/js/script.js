@@ -5,6 +5,8 @@ function intializeApp() {
     var firstCardClicked = null;
     var secondCardClicked = null;
     var matches = null;
+    var max_matches = 2;
+    addModalCloseHandler();
 
     $('.card').click(handleCardClick);
 
@@ -24,12 +26,38 @@ function intializeApp() {
         if (firstCardImgSrc === secondCardImgSrc) {
             console.log("cards match");
             matches += 1;
+            firstCardClicked = null;
+            secondCardClicked = null;
         } else {
             console.log("cards do not match");
             setTimeout(function() {
-                $('.back').removeClass('hidden');
+                $(firstCardClicked).find('.back').removeClass('hidden');
+                $(secondCardClicked).find('.back').removeClass('hidden');
+                firstCardClicked = null;
+                secondCardClicked = null;
             }, 1500);
-            // $('.back').delay('1.5').removeClass('hidden');
+
         }
+
+        if (matches === max_matches) {
+            console.log("you win the matching game");
+            myModal();
+        }
+    }
+
+
+    function myModal() {
+        setTimeout(function() {
+            $('.modal').css('display', 'block');
+
+        }, 500);
+
+    }
+
+    function addModalCloseHandler() {
+
+        $("body").click(function() {
+            $(".modal").css('display', 'none');
+        });
     }
 }
