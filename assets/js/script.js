@@ -12,18 +12,24 @@ function intializeApp() {
         $(this).find('.back').addClass('hidden');
         console.log("this is : ", this)
         if (firstCardClicked === null) {
-            firstCardClicked = $(this).find('.front').css("background-image");
+            firstCardClicked = $(this)
+            return;
         } else {
-            secondCardClicked = $(this).find('.front').css("background-image");
+            secondCardClicked = $(this)
         }
         console.log("first card click: ", firstCardClicked);
         console.log("second card click: ", secondCardClicked);
-
-        if (firstCardClicked === secondCardClicked) {
+        var firstCardImgSrc = firstCardClicked.find('.front').css("background-image");
+        var secondCardImgSrc = secondCardClicked.find('.front').css("background-image");
+        if (firstCardImgSrc === secondCardImgSrc) {
             console.log("cards match");
             matches += 1;
         } else {
             console.log("cards do not match");
+            setTimeout(function() {
+                $('.back').removeClass('hidden');
+            }, 1500);
+            // $('.back').delay('1.5').removeClass('hidden');
         }
     }
 }
