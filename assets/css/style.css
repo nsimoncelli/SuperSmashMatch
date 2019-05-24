@@ -120,6 +120,48 @@ aside {
     background-image: url("../../assets/images/andy.jpg")
 }
 
+.bill {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../../assets/images/bill.jpg")
+}
+
+.cody {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../../assets/images/cody.jpg")
+}
+
+.scott {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../../assets/images/scott.jpg")
+}
+
+.timd {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../../assets/images/tim-d.jpg")
+}
+
+.timh {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../../assets/images/tim-h.jpg")
+}
+
+.tj {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../../assets/images/tj.jpg")
+}
+
 .modal {
     display: none;
     /* Hidden by default */
