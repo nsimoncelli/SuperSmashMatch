@@ -34,6 +34,7 @@ function handleCardClick(event) {
         firstCardClicked = null;
         secondCardClicked = null;
         attempts += 1;
+        displayStats();
     } else {
         console.log("cards do not match");
         attempts += 1;
@@ -43,6 +44,7 @@ function handleCardClick(event) {
             firstCardClicked = null;
             secondCardClicked = null;
         }, 1500);
+        displayStats();
 
     }
 
@@ -59,8 +61,8 @@ function handleCardClick(event) {
 }
 
 function calculateAccuracy() {
-    var calcAcc = matches / attempts;
-    if (calcAcc === 0 || calcAcc === NaN) {
+    var calcAcc = Math.floor((matches / attempts) * 100);
+    if (calcAcc == 0 || isNaN(calcAcc)) {
         return 0;
     } else {
         return calcAcc;
