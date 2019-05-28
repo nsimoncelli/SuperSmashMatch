@@ -5,24 +5,28 @@ var secondCardClicked = null;
 var matches = null;
 var max_matches = 9;
 var attempts = 0;
-var games_played = null;
+var games_played = 0;
+var canBeClicked = true;
 
 function intializeApp() {
 
     addModalCloseHandler();
     displayStats();
-
     $('.card').click(handleCardClick);
 }
 
 function handleCardClick(event) {
+    if (!canBeClicked) {
+        return;
+    }
     $(this).find('.back').addClass('hidden');
-    console.log("this is : ", this)
+    console.log("this is : ", this);
     if (firstCardClicked === null) {
-        firstCardClicked = $(this)
+        firstCardClicked = $(this);
         return;
     } else {
-        secondCardClicked = $(this)
+        secondCardClicked = $(this);
+        canBeClicked = false;
     }
     console.log("first card click: ", firstCardClicked);
     console.log("second card click: ", secondCardClicked);
@@ -35,6 +39,7 @@ function handleCardClick(event) {
         secondCardClicked = null;
         attempts += 1;
         displayStats();
+        canBeClicked = true;
     } else {
         console.log("cards do not match");
         attempts += 1;
@@ -43,19 +48,16 @@ function handleCardClick(event) {
             $(secondCardClicked).find('.back').removeClass('hidden');
             firstCardClicked = null;
             secondCardClicked = null;
+            canBeClicked = true;
         }, 1500);
         displayStats();
-
     }
 
     if (matches === max_matches) {
         console.log("you win the matching game");
-        games_played += 1;
         myModal();
-        setTimeout(function() {
-            $('.back').removeClass('hidden');
+        resetStats();
 
-        }, 500);
     }
     displayStats();
 }
@@ -91,5 +93,17 @@ function displayStats() {
     $('#gamesPlayed').text(games_played);
     $('#attemptedGames').text(attempts);
 
+
+}
+
+function resetStats() {
+    matches = null;
+    attempts = null;
+    games_played += 1;
+    displayStats();
+    setTimeout(function() {
+        $('.back').removeClass('hidden');
+
+    }, 500);
 
 }
