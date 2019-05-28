@@ -7,9 +7,11 @@ var max_matches = 9;
 var attempts = 0;
 var games_played = 0;
 var canBeClicked = true;
+var teacherNames = ['dan', 'dan', 'cody', 'cody', 'brett', 'brett', 'andy', 'andy', 'bill', 'bill', 'scott', 'scott', 'timd', 'timd', 'timh', 'timh', 'tj', 'tj']
 
 function intializeApp() {
 
+    addCardsToBoard();
     addModalCloseHandler();
     displayStats();
     $('.card').click(handleCardClick);
@@ -106,4 +108,20 @@ function resetStats() {
 
     }, 500);
 
+}
+
+function addCardsToBoard() {
+    while (teacherNames.length > 0) {
+        var actualCard = $('<div>').addClass('card');
+        var cardFace = $('<div>').addClass('front');
+        var cardBack = $('<div>').addClass('back');
+        var name = teacherNames.splice(Math.floor(Math.random() * teacherNames.length - 1), 1);
+        console.log("teacher name appending working: " + name);
+        name = name.toString();
+        cardFace.addClass(name);
+        // $(actualCard).append(cardFace);
+        $(actualCard).append(cardBack);
+        $(actualCard).append(cardFace);
+        $('.cardContainer').append(actualCard);
+    }
 }
