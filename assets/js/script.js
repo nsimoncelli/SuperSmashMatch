@@ -21,21 +21,20 @@ function handleCardClick(event) {
     if (!canBeClicked) {
         return;
     }
-    $(this).find('.back').addClass('hidden');
-    console.log("this is : ", this);
+    
+    $(this).find('.back').hide();
+    $(this).find('.front').show();
     if (firstCardClicked === null) {
         firstCardClicked = $(this);
+        firstCardClicked.off();
         return;
     } else {
         secondCardClicked = $(this);
         canBeClicked = false;
     }
-    console.log("first card click: ", firstCardClicked);
-    console.log("second card click: ", secondCardClicked);
     var firstCardImgSrc = firstCardClicked.find('.front').css("background-image");
     var secondCardImgSrc = secondCardClicked.find('.front').css("background-image");
     if (firstCardImgSrc === secondCardImgSrc) {
-        console.log("cards match");
         matches += 1;
         firstCardClicked = null;
         secondCardClicked = null;
@@ -43,11 +42,14 @@ function handleCardClick(event) {
         displayStats();
         canBeClicked = true;
     } else {
-        console.log("cards do not match");
         attempts += 1;
         setTimeout(function() {
-            $(firstCardClicked).find('.back').removeClass('hidden');
-            $(secondCardClicked).find('.back').removeClass('hidden');
+            $(firstCardClicked).find('.back').show();
+            $(firstCardClicked).click(handleCardClick)
+            $(firstCardClicked).find('.front').hide();
+            $(secondCardClicked).find('.back').show();
+            $(firstCardClicked).click(handleCardClick);
+            $(secondCardClicked).find('.front').hide();
             firstCardClicked = null;
             secondCardClicked = null;
             canBeClicked = true;
@@ -113,7 +115,7 @@ function resetStats() {
 function addCardsToBoard() {
     while (teacherNames.length > 0) {
         var actualCard = $('<div>').addClass('card');
-        var cardFace = $('<div>').addClass('front');
+        var cardFace = $('<div>').addClass('front').hide();
         var cardBack = $('<div>').addClass('back');
         var name = teacherNames.splice(Math.floor(Math.random() * teacherNames.length - 1), 1);
         console.log("teacher name appending working: " + name);

@@ -6,7 +6,7 @@ body {
     position: relative;
     /* float: left; */
     display: block-inline;
-    background-image: url(../../assets/images/blind-robot.jpg);
+    background-image: url(../../assets/images/927403.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -65,7 +65,7 @@ aside {
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    background-image: url(../../assets/images/lfz-card.jpg);
+    background-image: url(../../assets/images/pngkey.com-smash-ball-png-1504139.png);
 }
 
 .front {
@@ -100,7 +100,7 @@ aside {
 }
 
 .dan {
-    background-image: url("../../assets/images/dan.jpg");
+    background-image: url("../../assets/images/BowserHeadSSBUWebsite.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -110,56 +110,56 @@ aside {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../../assets/images/brett.jpg");
+    background-image: url("../../assets/images/CaptainFalconHeadSSBUWebsite.png");
 }
 
 .andy {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../../assets/images/andy.jpg")
+    background-image: url("../../assets/images/DarkSamusHeadSSBUWebsite.png")
 }
 
 .bill {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../../assets/images/bill.jpg")
+    background-image: url("../../assets/images/JigglypuffHeadSSBUWebsite.png")
 }
 
 .cody {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../../assets/images/cody.jpg")
+    background-image: url("../../assets/images/LuigiHeadSSBUWebsite.png")
 }
 
 .scott {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../../assets/images/scott.jpg")
+    background-image: url("../../assets/images/MarioHeadSSBUWebsite.png")
 }
 
 .timd {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../../assets/images/tim-d.jpg")
+    background-image: url("../../assets/images/NessHeadSSBUWebsite.png")
 }
 
 .timh {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../../assets/images/tim-h.jpg")
+    background-image: url("../../assets/images/PikachuHeadSSBUWebsite.png")
 }
 
 .tj {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../../assets/images/tj.jpg")
+    background-image: url("../../assets/images/YoshiHeadSSBUWebsite.png")
 }
 
 .modal {
