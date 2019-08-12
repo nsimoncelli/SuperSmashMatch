@@ -1,6 +1,15 @@
+@font-face {
+    font-family: 'neontubes';
+    src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot");
+    src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot?#iefix") format("embedded-opentype"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff2") format("woff2"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff") format("woff"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
 body {
     /* border: 5px solid red; */
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     margin: 0px;
     position: relative;
@@ -99,68 +108,6 @@ aside {
     /* margin: auto; */
 }
 
-.dan {
-    background-image: url("../../assets/images/BowserHeadSSBUWebsite.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.brett {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("../../assets/images/CaptainFalconHeadSSBUWebsite.png");
-}
-
-.andy {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("../../assets/images/DarkSamusHeadSSBUWebsite.png")
-}
-
-.bill {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("../../assets/images/JigglypuffHeadSSBUWebsite.png")
-}
-
-.cody {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("../../assets/images/LuigiHeadSSBUWebsite.png")
-}
-
-.scott {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("../../assets/images/MarioHeadSSBUWebsite.png")
-}
-
-.timd {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("../../assets/images/NessHeadSSBUWebsite.png")
-}
-
-.timh {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("../../assets/images/PikachuHeadSSBUWebsite.png")
-}
-
-.tj {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("../../assets/images/YoshiHeadSSBUWebsite.png")
-}
 
 .modal {
     display: none;
@@ -199,3 +146,97 @@ aside {
 .hidden {
     display: none;
 }
+
+
+.glow{
+  /* color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate; */
+  font-size: 10vh;
+  color: #ffd9e2;
+  text-shadow: 0 0 0 transparent, 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #ff003c, 0 0 100px #ff003c, 0 0 200px #ff003c, 0 0 300px #ff003c, 0 0 500px #ff003c, 0 0 1000px #ff003c;
+  -webkit-animation: blink 4s infinite alternate;
+          animation: blink 4s infinite alternate;
+  
+
+}
+
+.marioGif{
+    height: 100px;
+    width: 100px;
+}
+.starFoxGif{
+    height: 100px;
+    width: 100px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+
+/* @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  } */
+
+
+  @-webkit-keyframes buzz {
+    70% {
+      opacity: 0.80;
+    }
+  }
+   
+  @keyframes buzz {
+    70% {
+      opacity: 0.80;
+    }
+  }
+  @-webkit-keyframes blink {
+    40% {
+      opacity: 1;
+    }
+    42% {
+      opacity: 0.8;
+    }
+    43% {
+      opacity: 1;
+    }
+    45% {
+      opacity: 0.2;
+    }
+    46% {
+      opacity: 1;
+    }
+  }
+  @keyframes blink {
+    40% {
+      opacity: 1;
+    }
+    42% {
+      opacity: 0.8;
+    }
+    43% {
+      opacity: 1;
+    }
+    45% {
+      opacity: 0.2;
+    }
+    46% {
+      opacity: 1;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .main {
+      width: 400px;
+      font-size: 150px;
+    }
+   
+    .main .socod {
+      font-size: 103px;
+    }
+  }
