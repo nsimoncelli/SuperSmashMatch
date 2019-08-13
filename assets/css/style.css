@@ -38,9 +38,10 @@ h1 {
 }
 
 .cardContainer {
-    height: 80%;
+    height: 70%;
     width: 70%;
     position: relative;
+    right: 100px;
     /* display: flex; */
     margin: 0px;
     float: right;
@@ -55,19 +56,14 @@ aside {
 
 .card {
     width: 15%;
-    /* height: 33.33%; */
-    /* background-size: auto; */
-    height: 33%;
-    /* border: 1px solid blue; */
-    /* display: flex; */
+    height: 50%;
     margin: 5px;
-    /* float: bottom; */
-    /* position: absolute; */
     display: inline-block;
     position: relative;
 }
 
 .back {
+    display: inline-block;
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -78,6 +74,7 @@ aside {
 }
 
 .front {
+    display: inline-block;
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -97,15 +94,17 @@ aside {
 
 .statsDiv {
     width: 175%;
-    height: 95%;
+    height: 70%;
     /* left: 5%; */
-    /* border: 3px solid green; */
+    border: 3px solid green;
     text-align: center;
     /* vertical-align: middle; */
-    background-color: turquoise;
+    background-color: limegreen;
     opacity: .5;
-    font-size: 1.5em
-    /* margin: auto; */
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    margin-top: 5%;
+    border-radius: 25px;
 }
 
 
@@ -147,13 +146,17 @@ aside {
     display: none;
 }
 
+.show{
+  display: inline-block;
+}
 
+/* 
 .glow{
-  /* color: #fff;
+  color: #fff;
   text-align: center;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate; */
+  animation: glow 1s ease-in-out infinite alternate;
   font-size: 10vh;
   color: #ffd9e2;
   text-shadow: 0 0 0 transparent, 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #ff003c, 0 0 100px #ff003c, 0 0 200px #ff003c, 0 0 300px #ff003c, 0 0 500px #ff003c, 0 0 1000px #ff003c;
@@ -161,9 +164,9 @@ aside {
           animation: blink 4s infinite alternate;
   
 
-}
+} */
 
-.marioGif{
+/* .marioGif{
     height: 100px;
     width: 100px;
 }
@@ -172,7 +175,7 @@ aside {
     width: 100px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-}
+} */
 
 
 /* @-webkit-keyframes glow {
@@ -185,58 +188,3 @@ aside {
   } */
 
 
-  @-webkit-keyframes buzz {
-    70% {
-      opacity: 0.80;
-    }
-  }
-   
-  @keyframes buzz {
-    70% {
-      opacity: 0.80;
-    }
-  }
-  @-webkit-keyframes blink {
-    40% {
-      opacity: 1;
-    }
-    42% {
-      opacity: 0.8;
-    }
-    43% {
-      opacity: 1;
-    }
-    45% {
-      opacity: 0.2;
-    }
-    46% {
-      opacity: 1;
-    }
-  }
-  @keyframes blink {
-    40% {
-      opacity: 1;
-    }
-    42% {
-      opacity: 0.8;
-    }
-    43% {
-      opacity: 1;
-    }
-    45% {
-      opacity: 0.2;
-    }
-    46% {
-      opacity: 1;
-    }
-  }
-  @media screen and (min-width: 1000px) {
-    .main {
-      width: 400px;
-      font-size: 150px;
-    }
-   
-    .main .socod {
-      font-size: 103px;
-    }
-  }
