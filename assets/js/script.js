@@ -44,49 +44,26 @@ function handleCardClick(event) {
     if (!canBeClicked) {
         return;
     }
-    debugger;
-    $(this).find('.back').hide();
-    $(this).find('.front').show();
-    if (firstCardClicked === null) {
-        firstCardClicked = $(this);
-        firstCardClicked.off();
-        return;
-    } else {
-        secondCardClicked = $(this);
-        canBeClicked = false;
-    }
-    firstCardImgSrc = firstCardClicked.find('.front').css("background-image");
-    secondCardImgSrc = secondCardClicked.find('.front').css("background-image");
-    // debugger;
-    if (firstCardImgSrc === secondCardImgSrc) {
-        matches += 1;
-        firstCardImgSrc = null;
-        secondCardImgSrc = null;
-        firstCardClicked = null;
-        secondCardClicked = null;
-        attempts += 1;
-        displayStats();
-        canBeClicked = false;
-        setTimeout(function(){
-            canBeClicked = true;
-        }, 1500)
-        // canBeClicked = true;
-    } else {
-        attempts += 1;
-        setTimeout(function() {
-            $(firstCardClicked).find('.back').show();
-            $(firstCardClicked).click(handleCardClick)
-            $(firstCardClicked).find('.front').hide();
-            $(secondCardClicked).find('.back').show();
-            $(firstCardClicked).click(handleCardClick);
-            $(secondCardClicked).find('.front').hide();
-            firstCardClicked = null;
-            firstCardImgSrc = null;
-            secondCardImgSrc = null;
-            secondCardClicked = null;
-            canBeClicked = true;
-        }, 1500);
-        displayStats();
+    if($(event.currentTarget).find('.back').css('display')==='block'){
+        $(event.currentTarget).find('.back').addClass('hidden');
+        $(event.currentTarget).find('.front').css("display", "inline-block");
+        if(firstCardClicked===null){
+            firstCardClicked = $(event.currentTarget);
+        }else{
+            attempts++
+            secondCardClicked = $(event.currentTarget);
+            var imgCard1 = firstCardClicked.find('.front').css('background-image');
+            var imgCard2 = secondCardClicked.find('.front').css('background-image');
+            if(imgCard1 === imgCard2){
+                matches++;
+                firstCardClicked = null;
+                secondCardClicked = null;
+            }else{
+                attempts++
+                $('.card').unbind();
+                setTimeout(flipCardsBack, 1500)
+            }
+        }
     }
 
     if (matches === max_matches) {
@@ -96,6 +73,15 @@ function handleCardClick(event) {
 
     }
     displayStats();
+}
+function flipCardsBack() {
+    firstCardClicked.find('.back').removeClass('hidden');
+    firstCardClicked.find('.front').css("display","none");
+    secondCardClicked.find('.back').removeClass('hidden');
+    secondCardClicked.find('.front').css("display","none");
+    firstCardClicked = null;
+    secondCardClicked = null;
+    $('.card').bind('click', handleCardClick);
 }
 
 function calculateAccuracy() {
@@ -139,24 +125,13 @@ function resetStats() {
     displayStats();
     setTimeout(function() {
         $('.back').removeClass('hidden');
+        $('.front').addClass('hidden');
 
     }, 500);
-
+    addCardsToBoard();
 }
 
 function addCardsToBoard() {
-    // while (teacherNames.length > 0) {
-    //     var actualCard = $('<div>').addClass('card');
-    //     var cardFace = $('<div>').addClass('front').hide();
-    //     var cardBack = $('<div>').addClass('back');
-    //     var name = teacherNames.splice(Math.floor(Math.random() * teacherNames.length - 1), 1);
-    //     console.log("teacher name appending working: " + name);
-    //     name = name.toString();
-    //     cardFace.addClass(name);
-    //     $(actualCard).append(cardBack);
-    //     $(actualCard).append(cardFace);
-    //     $('.cardContainer').append(actualCard);
-    // }
     while(characterNames.length>0){
             var characterIndex = Math.floor(Math.random()*characterNames.length-1);
             var chosenCharacter = characterNames.splice(characterIndex, 1);
@@ -175,7 +150,5 @@ function addCardsToBoard() {
             $('.cardContainer').append(actualCard);
             }
         
-
-
 }
 
