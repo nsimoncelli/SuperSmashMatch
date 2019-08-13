@@ -56,7 +56,7 @@ aside {
 
 .card {
     width: 15%;
-    height: 50%;
+    height: 45%;
     margin: 5px;
     display: inline-block;
     position: relative;
@@ -105,7 +105,7 @@ aside {
     margin-bottom: 1em;
     margin-top: 5%;
     border-radius: 25px;
-    animation: glow 1s infinite alternate;
+    animation: glow 3s infinite alternate;
     
 }
 
@@ -118,7 +118,7 @@ aside {
   }
 }
 .modal {
-    display: none;
+    display: inline-block;
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
@@ -144,11 +144,18 @@ aside {
 /* Modal Content */
 
 .modal-content {
+  position: relative;
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 35%;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: #aef4af;
+    display: block;
+    text-align: center;
+    flex-direction: column;
 }
 
 .hidden {
@@ -159,22 +166,17 @@ aside {
   display: inline-block;
 }
 
-/* 
-.glow{
-  color: #fff;
-  text-align: center;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
-  font-size: 10vh;
-  color: #ffd9e2;
-  text-shadow: 0 0 0 transparent, 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #ff003c, 0 0 100px #ff003c, 0 0 200px #ff003c, 0 0 300px #ff003c, 0 0 500px #ff003c, 0 0 1000px #ff003c;
-  -webkit-animation: blink 4s infinite alternate;
-          animation: blink 4s infinite alternate;
-  
+.winGif{
+  height: 300px;
+  width: 400px;
+}
 
-} */
-
+.winText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 /* .marioGif{
     height: 100px;
     width: 100px;
@@ -184,16 +186,5 @@ aside {
     width: 100px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-} */
-
-
-/* @-webkit-keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-    }
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-    }
-  } */
-
-
+}
+ */
