@@ -29,8 +29,7 @@ var characterImgUrl = [
                         './assets/images/PikachuHeadSSBUWebsite.png',
                         './assets/images/YoshiHeadSSBUWebsite.png',
                         './assets/images/YoshiHeadSSBUWebsite.png'
-                    ] 
-// var teacherNames = ['dan', 'dan', 'cody', 'cody', 'brett', 'brett', 'andy', 'andy', 'bill', 'bill', 'scott', 'scott', 'timd', 'timd', 'timh', 'timh', 'tj', 'tj']
+                    ];
 
 function intializeApp() {
 
@@ -56,6 +55,7 @@ function handleCardClick(event) {
             var imgCard2 = secondCardClicked.find('.front').css('background-image');
             if(imgCard1 === imgCard2){
                 matches++;
+                attempts++;
                 firstCardClicked = null;
                 secondCardClicked = null;
             }else{
