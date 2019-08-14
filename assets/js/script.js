@@ -1,5 +1,13 @@
 $(document).ready(intializeApp);
-
+var mushroomKingdom = new Audio("./assets/images/mushroomkingdom.mp3");
+var mushroomIsPlaying = false;
+var hyruleSong = new Audio("./assets/images/hyrulecastle.mp3");
+var hyruleIsPlaying = false;
+var dreamlandSong = new Audio("./assets/images/Dreamland.mp3");
+var dreamLandIsPlaying = false;
+var victorySound = new Audio("./assets/images/victorySong.mp3");
+var myAudio = document.getElementById("myAudio");
+var isPlaying = false;
 var firstCardClicked = null;
 var firstCardImgSrc = null;
 var secondCardClicked = null;
@@ -37,6 +45,29 @@ function intializeApp() {
     addModalCloseHandler();
     displayStats();
     $('.card').click(handleCardClick);
+    themeSongs();
+   
+}
+
+
+function themeSongs(){
+    isPlaying = true;
+    hyruleSong.play();
+    hyruleIsPlaying= true;
+    hyruleSong.addEventListener('ended', function(){
+        mushroomKingdom.play();
+        mushroomIsPlaying = true
+        hyruleIsPlaying = false
+    },false);
+    mushroomKingdom.addEventListener('ended', function(){
+        mushroomIsPlaying = false;
+        dreamlandSong.play();
+        dreamLandIsPlaying = true;
+    })
+    dreamlandSong.addEventListener('ended', function(){
+        dreamLandIsPlaying = false;
+        hyruleSong.play();
+    })
 }
 
 function handleCardClick(event) {
@@ -67,9 +98,11 @@ function handleCardClick(event) {
     }
 
     if (matches === max_matches) {
-        console.log("you win the matching game");
+        stopMusic();
         myModal();
         resetStats();
+        addCardsToBoard();
+
 
     }
     displayStats();
@@ -93,8 +126,20 @@ function calculateAccuracy() {
     }
 }
 
-
+function stopMusic(){
+    if(hyruleIsPlaying){
+        hyruleSong.pause();
+        hyruleIsPlaying = false;
+    }else if(mushroomIsPlaying){
+        mushroomKingdom.pause();
+        mushroomIsPlaying = false;
+    }else if(dreamLandIsPlaying){
+        dreamlandSong.pause();
+        dreamLandIsPlaying = false;
+    }
+}
 function myModal() {
+    victorySound.play();
     setTimeout(function() {
         $('.modal').css('display', 'block');
 
@@ -102,11 +147,13 @@ function myModal() {
 
 }
 
+
 function addModalCloseHandler() {
 
     $("body").click(function() {
         $(".modal").css('display', 'none');
     });
+    themeSongs();
 }
 
 function displayStats() {
@@ -120,7 +167,7 @@ function displayStats() {
 
 function resetStats() {
     matches = null;
-    attempts = null;
+    attempts = 0;
     games_played += 1;
     displayStats();
     setTimeout(function() {
@@ -128,7 +175,7 @@ function resetStats() {
         $('.front').addClass('hidden');
 
     }, 500);
-    addCardsToBoard();
+    
 }
 
 function addCardsToBoard() {
