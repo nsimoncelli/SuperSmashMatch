@@ -96,10 +96,8 @@ aside {
   font-family: cursive;
     width: 175%;
     height: 70%;
-    /* left: 5%; */
     border: 3px solid green;
     text-align: center;
-    /* vertical-align: middle; */
     background-color: limegreen;
     opacity: .5;
     font-size: 1.5em;
@@ -119,7 +117,8 @@ aside {
   }
 }
 .modal {
-    display: none;
+  font-family: cursive; 
+    display: inline-block;
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
@@ -154,6 +153,7 @@ aside {
     justify-content: center;
     border-radius: 25px;
     background-color: #aef4af;
+    opacity: .9;
     display: block;
     text-align: center;
     flex-direction: column;

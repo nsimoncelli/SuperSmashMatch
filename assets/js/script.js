@@ -21,30 +21,29 @@ var max_matches = 9;
 var attempts = 0;
 var games_played = 0;
 var canBeClicked = true;
-var characterNames = ['Bowser','Bowser', 'captainFalcon','captainFalcon', 'darkSamus','darkSamus', 'jigglyPuff', 'jigglyPuff','Luigi','Luigi', 'Mario','Mario', 'Ness','Ness', 'Pikachu', 'Pikachu', 'Yoshi',  'Yoshi'];
-var characterImgUrl = [
-                        './assets/images/BowserHeadSSBUWebsite.png',
-                        './assets/images/BowserHeadSSBUWebsite.png',
-                        './assets/images/CaptainFalconHeadSSBUWebsite.png',
-                        './assets/images/CaptainFalconHeadSSBUWebsite.png',  
-                        './assets/images/DarkSamusHeadSSBUWebsite.png',
-                        './assets/images/DarkSamusHeadSSBUWebsite.png',
-                        './assets/images/JigglypuffHeadSSBUWebsite.png',
-                        './assets/images/JigglypuffHeadSSBUWebsite.png',
-                        './assets/images/LuigiHeadSSBUWebsite.png',
-                        './assets/images/LuigiHeadSSBUWebsite.png',
-                        './assets/images/MarioHeadSSBUWebsite.png',
-                        './assets/images/MarioHeadSSBUWebsite.png',
-                        './assets/images/NessHeadSSBUWebsite.png',
-                        './assets/images/NessHeadSSBUWebsite.png',
-                        './assets/images/PikachuHeadSSBUWebsite.png',
-                        './assets/images/PikachuHeadSSBUWebsite.png',
-                        './assets/images/YoshiHeadSSBUWebsite.png',
-                        './assets/images/YoshiHeadSSBUWebsite.png'
-                    ];
+// var characterNames = ['Bowser','Bowser', 'captainFalcon','captainFalcon', 'darkSamus','darkSamus', 'jigglyPuff', 'jigglyPuff','Luigi','Luigi', 'Mario','Mario', 'Ness','Ness', 'Pikachu', 'Pikachu', 'Yoshi',  'Yoshi'];
+// var characterImgUrl = [
+//                         './assets/images/BowserHeadSSBUWebsite.png',
+//                         './assets/images/BowserHeadSSBUWebsite.png',
+//                         './assets/images/CaptainFalconHeadSSBUWebsite.png',
+//                         './assets/images/CaptainFalconHeadSSBUWebsite.png',  
+//                         './assets/images/DarkSamusHeadSSBUWebsite.png',
+//                         './assets/images/DarkSamusHeadSSBUWebsite.png',
+//                         './assets/images/JigglypuffHeadSSBUWebsite.png',
+//                         './assets/images/JigglypuffHeadSSBUWebsite.png',
+//                         './assets/images/LuigiHeadSSBUWebsite.png',
+//                         './assets/images/LuigiHeadSSBUWebsite.png',
+//                         './assets/images/MarioHeadSSBUWebsite.png',
+//                         './assets/images/MarioHeadSSBUWebsite.png',
+//                         './assets/images/NessHeadSSBUWebsite.png',
+//                         './assets/images/NessHeadSSBUWebsite.png',
+//                         './assets/images/PikachuHeadSSBUWebsite.png',
+//                         './assets/images/PikachuHeadSSBUWebsite.png',
+//                         './assets/images/YoshiHeadSSBUWebsite.png',
+//                         './assets/images/YoshiHeadSSBUWebsite.png'
+//                     ];
 
 function intializeApp() {
-
     addCardsToBoard();
     addModalCloseHandler();
     displayStats();
@@ -102,7 +101,6 @@ function handleCardClick(event) {
         stopMusic();
         myModal();
         resetStats();
-        addCardsToBoard();
 
 
     }
@@ -172,7 +170,7 @@ function addModalCloseHandler() {
     $("body").click(function() {
         $(".modal").css('display', 'none');
     });
-    themeSongs();
+    
 }
 
 function displayStats() {
@@ -180,8 +178,6 @@ function displayStats() {
     $('#accuracy').text(accuracyResults + "%");
     $('#gamesPlayed').text(games_played);
     $('#attemptedGames').text(attempts);
-
-
 }
 
 function resetStats() {
@@ -189,15 +185,32 @@ function resetStats() {
     attempts = 0;
     games_played += 1;
     displayStats();
-    setTimeout(function() {
-        $('.back').removeClass('hidden');
-        $('.front').addClass('hidden');
-
-    }, 500);
+    resetGame();
     
 }
 
 function addCardsToBoard() {
+    var characterNames = ['Bowser','Bowser', 'captainFalcon','captainFalcon', 'darkSamus','darkSamus', 'jigglyPuff', 'jigglyPuff','Luigi','Luigi', 'Mario','Mario', 'Ness','Ness', 'Pikachu', 'Pikachu', 'Yoshi',  'Yoshi'];
+    var characterImgUrl = [
+                        './assets/images/BowserHeadSSBUWebsite.png',
+                        './assets/images/BowserHeadSSBUWebsite.png',
+                        './assets/images/CaptainFalconHeadSSBUWebsite.png',
+                        './assets/images/CaptainFalconHeadSSBUWebsite.png',  
+                        './assets/images/DarkSamusHeadSSBUWebsite.png',
+                        './assets/images/DarkSamusHeadSSBUWebsite.png',
+                        './assets/images/JigglypuffHeadSSBUWebsite.png',
+                        './assets/images/JigglypuffHeadSSBUWebsite.png',
+                        './assets/images/LuigiHeadSSBUWebsite.png',
+                        './assets/images/LuigiHeadSSBUWebsite.png',
+                        './assets/images/MarioHeadSSBUWebsite.png',
+                        './assets/images/MarioHeadSSBUWebsite.png',
+                        './assets/images/NessHeadSSBUWebsite.png',
+                        './assets/images/NessHeadSSBUWebsite.png',
+                        './assets/images/PikachuHeadSSBUWebsite.png',
+                        './assets/images/PikachuHeadSSBUWebsite.png',
+                        './assets/images/YoshiHeadSSBUWebsite.png',
+                        './assets/images/YoshiHeadSSBUWebsite.png'
+                    ];
     while(characterNames.length>0){
             var characterIndex = Math.floor(Math.random()*characterNames.length-1);
             var chosenCharacter = characterNames.splice(characterIndex, 1);
@@ -218,3 +231,12 @@ function addCardsToBoard() {
         
 }
 
+
+function resetGame(){
+    $('.card').remove();
+    firstCardClicked = null;
+    secondCardClicked = null;
+    addCardsToBoard();
+    $('.card').click(handleCardClick);
+
+}
