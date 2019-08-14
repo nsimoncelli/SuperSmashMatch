@@ -7,6 +7,10 @@ var dreamlandSong = new Audio("./assets/images/Dreamland.mp3");
 var dreamLandIsPlaying = false;
 var victorySound = new Audio("./assets/images/victorySong.mp3");
 var myAudio = document.getElementById("myAudio");
+var audienceDissapoint = new Audio("./assets/images/audience_dissapoint.wav");
+var punchSoundOne = new Audio("./assets/images/punchsound1.wav");
+var punchSoundTwo = new Audio("./assets/images/punchsound2.wav");
+var punchSoundThree = new Audio("./assets/images/punchsound3.wav");
 var isPlaying = false;
 var firstCardClicked = null;
 var firstCardImgSrc = null;
@@ -46,7 +50,6 @@ function intializeApp() {
     displayStats();
     $('.card').click(handleCardClick);
     themeSongs();
-   
 }
 
 
@@ -67,13 +70,12 @@ function themeSongs(){
     dreamlandSong.addEventListener('ended', function(){
         dreamLandIsPlaying = false;
         hyruleSong.play();
+        hyruleIsPlaying = true;
     })
 }
 
 function handleCardClick(event) {
-    if (!canBeClicked) {
-        return;
-    }
+    clickPunchSounds();
     if($(event.currentTarget).find('.back').css('display')==='block'){
         $(event.currentTarget).find('.back').addClass('hidden');
         $(event.currentTarget).find('.front').css("display", "inline-block");
@@ -86,11 +88,10 @@ function handleCardClick(event) {
             var imgCard2 = secondCardClicked.find('.front').css('background-image');
             if(imgCard1 === imgCard2){
                 matches++;
-                attempts++;
                 firstCardClicked = null;
                 secondCardClicked = null;
             }else{
-                attempts++
+                audienceDissapoint.play();
                 $('.card').unbind();
                 setTimeout(flipCardsBack, 1500)
             }
@@ -106,6 +107,24 @@ function handleCardClick(event) {
 
     }
     displayStats();
+}
+
+
+function clickPunchSounds(){
+    var randomPunchGen = Math.ceil(Math.random()*3);
+    switch(randomPunchGen){
+        case 1:
+            punchSoundOne.play();
+            break;
+        case 2:
+            punchSoundTwo.play();
+            break;
+        case 3: 
+            punchSoundThree.play();
+            break;
+        default:
+            break;
+    }
 }
 function flipCardsBack() {
     firstCardClicked.find('.back').removeClass('hidden');
