@@ -92,7 +92,7 @@ function handleCardClick(event) {
             }else{
                 audienceDissapoint.play();
                 $('.card').unbind();
-                setTimeout(flipCardsBack, 1500)
+                setTimeout(flipCardsBack, 1000)
             }
         }
     }
@@ -227,8 +227,7 @@ function addCardsToBoard() {
             $(actualCard).append(cardBack);
             $(actualCard).append(cardFace);
             $('.cardContainer').append(actualCard);
-            }
-        
+            }     
 }
 
 
