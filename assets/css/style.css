@@ -94,7 +94,7 @@ h1 {
 
 .statsDiv {
     font-family: smashFont;
-    width: 50%;
+    width: 100%;
     height: 70%;
     border: 3px solid green;
     text-align: center;
@@ -191,7 +191,6 @@ h1 {
     display: inline-block;
   }
   .smashTitle{
-    margin-left: 1.5%;
     width: 100%;
     font-size: 2em;
 
@@ -244,18 +243,34 @@ h1 {
   /* margin: auto; */
   padding: 20px;
   border: 1px solid #888;
-  width: 30%;
+  width: 50%;
   justify-content: center;
   border-radius: 25px;
   background-color: #aef4af;
   opacity: .9;
   display: block;
-  left: .5%;
+  left: 20%;
   text-align: center;
   flex-direction: column;
 }
 .winGif{
   width: 50%;
   height: 10%;
+}
+}
+
+@media screen and (max-width: 812px)
+and (min-width: 700px){
+
+  .cardContainer {
+    height: 70%;
+    width: 150%;
+    position: absolute;
+    left: 3.5%;
+    margin: 0px;
+    display: inline-block;
+}
+.masterStatsDiv{
+  display: none;
 }
 }
