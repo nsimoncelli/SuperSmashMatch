@@ -71,6 +71,10 @@ h1 {
     background-position: center;
     position: absolute;
     background-image: url(../../assets/images/pngkey.com-smash-ball-png-1504139.png);
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
 }
 
 .front {
@@ -85,7 +89,7 @@ h1 {
 .masterStatsDiv {
     /* border: 5px solid pink; */
     height: 60%;
-    width: 30%;
+    /* width: 30%; */
     /* margin: 1px; */
     border-bottom: 5px;
     text-align: center;
@@ -359,5 +363,15 @@ and (orientation : portrait) {
   .card{
     width: 210px;
     height: 210px;
+  }
+}
+
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
   }
 }
