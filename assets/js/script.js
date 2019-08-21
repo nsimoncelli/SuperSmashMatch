@@ -21,27 +21,6 @@ var max_matches = 9;
 var attempts = 0;
 var games_played = 0;
 var canBeClicked = true;
-// var characterNames = ['Bowser','Bowser', 'captainFalcon','captainFalcon', 'darkSamus','darkSamus', 'jigglyPuff', 'jigglyPuff','Luigi','Luigi', 'Mario','Mario', 'Ness','Ness', 'Pikachu', 'Pikachu', 'Yoshi',  'Yoshi'];
-// var characterImgUrl = [
-//                         './assets/images/BowserHeadSSBUWebsite.png',
-//                         './assets/images/BowserHeadSSBUWebsite.png',
-//                         './assets/images/CaptainFalconHeadSSBUWebsite.png',
-//                         './assets/images/CaptainFalconHeadSSBUWebsite.png',  
-//                         './assets/images/DarkSamusHeadSSBUWebsite.png',
-//                         './assets/images/DarkSamusHeadSSBUWebsite.png',
-//                         './assets/images/JigglypuffHeadSSBUWebsite.png',
-//                         './assets/images/JigglypuffHeadSSBUWebsite.png',
-//                         './assets/images/LuigiHeadSSBUWebsite.png',
-//                         './assets/images/LuigiHeadSSBUWebsite.png',
-//                         './assets/images/MarioHeadSSBUWebsite.png',
-//                         './assets/images/MarioHeadSSBUWebsite.png',
-//                         './assets/images/NessHeadSSBUWebsite.png',
-//                         './assets/images/NessHeadSSBUWebsite.png',
-//                         './assets/images/PikachuHeadSSBUWebsite.png',
-//                         './assets/images/PikachuHeadSSBUWebsite.png',
-//                         './assets/images/YoshiHeadSSBUWebsite.png',
-//                         './assets/images/YoshiHeadSSBUWebsite.png'
-//                     ];
 
 function intializeApp() {
     addCardsToBoard();
@@ -50,7 +29,6 @@ function intializeApp() {
     $('.card').click(handleCardClick);
     themeSongs();
 }
-
 
 function themeSongs(){
     isPlaying = true;
