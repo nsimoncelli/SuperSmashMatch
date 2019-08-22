@@ -399,14 +399,16 @@ and (orientation : landscape){
 body{
   background-size: 900px;
 }
-
+  .card{
+    width: 14%;
+  }
   .cardContainer {
     height: 65%;
     width: 100%;
     position: absolute;
     margin: 0px;
     display: inline-block;
-    left: 2%;
+    left: 5%;
     top: 10%;
 }
 .smashTitle{
