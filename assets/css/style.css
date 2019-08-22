@@ -395,7 +395,6 @@ and (orientation : portrait)  {
 @media only screen 
 and (min-device-width : 375px) 
 and (max-device-width : 812px) 
-and (-webkit-device-pixel-ratio : 3)
 and (orientation : landscape){
 body{
   background-size: 900px;
@@ -407,9 +406,8 @@ body{
     position: absolute;
     margin: 0px;
     display: inline-block;
-}
-.card{
-  height: 45%;
+    left: 2%;
+    top: 10%;
 }
 .smashTitle{
   width: 50%;
