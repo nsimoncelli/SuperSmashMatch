@@ -316,7 +316,7 @@ and (max-device-width : 812px)
 and (-webkit-device-pixel-ratio : 3)
 and (orientation : portrait)  {
   body{
-    background-image: url(https://i.kym-cdn.com/photos/images/original/001/426/908/7b2.jpg);
+    background-image: url("/assets/images/MM-mobile-vertical.jpg");
     background-size: auto;
   }
   main{
@@ -453,19 +453,19 @@ and (orientation : landscape) {
   }
   .card{
     width: 15%;
- 
+    
   }
 
 
 }
-
+/*iphone 6/7/8 plus vertical*/
 @media only screen 
 and (min-device-width : 414px) 
 and (max-device-width : 736px) 
 and (orientation : portrait) { 
   body{
-    background-image: url(https://i.kym-cdn.com/photos/images/original/001/426/908/7b2.jpg);
-    background-size: 414px 736px;
+    background-image: url("/assets/images/MM-mobile-vertical.jpg");
+    background-size: auto;
   }
   .smashTitle{
     width: 90%;
@@ -473,7 +473,7 @@ and (orientation : portrait) {
   .cardContainer{
     top: 5%;
     left: 3%;
-    /* height: 100%; */
+
   }
     .card{
       width: 18%;
@@ -486,5 +486,38 @@ and (orientation : portrait) {
       margin-left: 23%;
     }
     
+
+ }
+
+/* iphone 6/7/8 vertical*/
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2) { 
+
+  body{
+    background-image: url("/assets/images/MM-mobile-vertical.jpg");
+    background-size: 375px 710px;
+    /* height: 375px;
+    width: 667px; */
+  }
+  .smashTitle{
+    width: 70%;
+  }
+  .cardContainer{
+    left: 0;
+    height: 200%;
+    width: 100%;
+  }
+  .statsDiv{
+    display: none;
+  }
+
+  .card{
+    height: 15vh;
+    width: 12vh;
+    margin: 5px;
+  }
+
+  .cardContainer>.card:nth-child(17){
+    margin-left: 23%;
+  }
 
  }
