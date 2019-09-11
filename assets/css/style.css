@@ -71,10 +71,6 @@ h1 {
     background-position: center;
     position: absolute;
     background-image: url(../../assets/images/pngkey.com-smash-ball-png-1504139.png);
-    animation-name: spin;
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; 
 }
 
 .front {
@@ -244,7 +240,7 @@ and (orientation : portrait) {
   .cardContainer{
     width: 110%;
     height: 135%;
-    left: 1%;
+    left: 5%;
   }
   .cardContainer>.card:nth-child(16){
     margin-left: 20%;
@@ -302,15 +298,6 @@ and (orientation : portrait) {
   } */
 }
 
-
-@keyframes spin {
-  from {
-      transform:rotate(0deg);
-  }
-  to {
-      transform:rotate(360deg);
-  }
-}
 
 /*ipad pro portrait*/
 @media only screen 
@@ -473,6 +460,8 @@ text-align: center;
 flex-direction: column;
 }
 }
+
+
 /*iphone 6/7/8+ horizontal*/
 @media only screen 
 and (min-device-width : 414px) 
@@ -489,8 +478,6 @@ and (orientation : landscape) {
     width: 15%;
     
   }
-
-
 }
 /*iphone 6/7/8 plus vertical*/
 @media only screen 
