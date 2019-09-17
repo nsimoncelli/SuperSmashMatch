@@ -83,10 +83,7 @@ h1 {
 }
 
 .masterStatsDiv {
-    /* border: 5px solid pink; */
     height: 60%;
-    /* width: 30%; */
-    /* margin: 1px; */
     border-bottom: 5px;
     text-align: center;
     display: grid;
@@ -98,7 +95,6 @@ h1 {
     height: 70%;
     text-align: center;
     background-color: limegreen;
-    /* opacity: .5; */
     font-size: 1.5em;
     margin-bottom: .5em;
     margin-top: 5%;
@@ -524,7 +520,7 @@ and (orientation : portrait) {
     width: 70%;
   }
   .cardContainer{
-    left: 0;
+    left: 2%;
     height: 200%;
     width: 100%;
   }
@@ -541,5 +537,13 @@ and (orientation : portrait) {
   .cardContainer>.card:nth-child(17){
     margin-left: 23%;
   }
+  .modal-content{
+    width: 50%;
+  }
+  .winGif{
+    height: 20vh;
+    width: 30vw;
+  }
+
 
  }
