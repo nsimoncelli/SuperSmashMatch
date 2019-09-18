@@ -1,10 +1,10 @@
 $(document).ready(intializeApp);
-var mushroomKingdom = new Audio("./assets/images/mushroomkingdom.mp3");
-var mushroomIsPlaying = false;
-var hyruleSong = new Audio("./assets/images/hyrulecastle.mp3");
-var hyruleIsPlaying = false;
-var dreamlandSong = new Audio("./assets/images/Dreamland.mp3");
-var dreamLandIsPlaying = false;
+// var mushroomKingdom = new Audio("./assets/images/mushroomkingdom.mp3");
+// var mushroomIsPlaying = false;
+// var hyruleSong = new Audio("./assets/images/hyrulecastle.mp3");
+// var hyruleIsPlaying = false;
+// var dreamlandSong = new Audio("./assets/images/Dreamland.mp3");
+// var dreamLandIsPlaying = false;
 var victorySound = new Audio("./assets/images/victorySong.mp3");
 var myAudio = document.getElementById("myAudio");
 var audienceDissapoint = new Audio("./assets/images/audience_dissapoint.wav");
@@ -30,26 +30,26 @@ function intializeApp() {
     themeSongs();
 }
 
-function themeSongs(){
-    isPlaying = true;
-    hyruleSong.play();
-    hyruleIsPlaying= true;
-    hyruleSong.addEventListener('ended', function(){
-        mushroomKingdom.play();
-        mushroomIsPlaying = true
-        hyruleIsPlaying = false
-    },false);
-    mushroomKingdom.addEventListener('ended', function(){
-        mushroomIsPlaying = false;
-        dreamlandSong.play();
-        dreamLandIsPlaying = true;
-    })
-    dreamlandSong.addEventListener('ended', function(){
-        dreamLandIsPlaying = false;
-        hyruleSong.play();
-        hyruleIsPlaying = true;
-    })
-}
+// function themeSongs(){
+//     isPlaying = true;
+//     hyruleSong.play();
+//     hyruleIsPlaying= true;
+//     hyruleSong.addEventListener('ended', function(){
+//         mushroomKingdom.play();
+//         mushroomIsPlaying = true
+//         hyruleIsPlaying = false
+//     },false);
+//     mushroomKingdom.addEventListener('ended', function(){
+//         mushroomIsPlaying = false;
+//         dreamlandSong.play();
+//         dreamLandIsPlaying = true;
+//     })
+//     dreamlandSong.addEventListener('ended', function(){
+//         dreamLandIsPlaying = false;
+//         hyruleSong.play();
+//         hyruleIsPlaying = true;
+//     })
+// }
 
 function handleCardClick(event) {
     clickPunchSounds();
@@ -76,7 +76,7 @@ function handleCardClick(event) {
     }
 
     if (matches === max_matches) {
-        stopMusic();
+        // stopMusic();
         myModal();
         resetStats();
 
@@ -121,18 +121,18 @@ function calculateAccuracy() {
     }
 }
 
-function stopMusic(){
-    if(hyruleIsPlaying){
-        hyruleSong.pause();
-        hyruleIsPlaying = false;
-    }else if(mushroomIsPlaying){
-        mushroomKingdom.pause();
-        mushroomIsPlaying = false;
-    }else if(dreamLandIsPlaying){
-        dreamlandSong.pause();
-        dreamLandIsPlaying = false;
-    }
-}
+// function stopMusic(){
+//     if(hyruleIsPlaying){
+//         hyruleSong.pause();
+//         hyruleIsPlaying = false;
+//     }else if(mushroomIsPlaying){
+//         mushroomKingdom.pause();
+//         mushroomIsPlaying = false;
+//     }else if(dreamLandIsPlaying){
+//         dreamlandSong.pause();
+//         dreamLandIsPlaying = false;
+//     }
+// }
 function myModal() {
     victorySound.play();
     setTimeout(function() {
