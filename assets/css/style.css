@@ -221,6 +221,7 @@ h1 {
     content:url(/assets/images/ipad-vertical-title.png);
     width: 70%;
   }
+
     .cardContainer {
       width: 90%;
       height: 90%;
@@ -299,6 +300,9 @@ and (-webkit-min-device-pixel-ratio: 1)
   .smashTitle{
     content:url(/assets/images/ipad-vertical-title.png);
     width: 80%;
+  }
+  .title{
+    margin-top: 2px;
   }
   .masterStatsDiv{
     display: none;
@@ -449,24 +453,26 @@ and (orientation : portrait)  {
 
 /*/iphone X landscape responsiveness/*/
 @media only screen 
-and (min-device-width : 375px) 
+and (min-device-height : 375px) 
 and (max-device-width : 812px) 
 and (orientation : landscape){
 body{
   background-size: 900px;
 }
   .card{
-    width: 14%;
+    width: 15vw;
+    height: 24vh;
     padding: 2px;
   }
   .cardContainer {
-    height: 65%;
+    height: 100%;
     /* width: 100%; */
     position: absolute;
     margin: 0px;
     display: inline-block;
     /* left: 20%; */
     top: 10%;
+    left: 5%;
 }
 .smashTitle{
   width: 50%;
@@ -508,8 +514,8 @@ and (orientation : landscape) {
   }
   .cardContainer{
     height: 90%;
-    width: 100vw;
-    left: 2%;
+    width: 90vw;
+    left: 5%;
     
   }
   .card{
