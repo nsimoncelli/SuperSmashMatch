@@ -104,6 +104,30 @@ h1 {
     animation: glow 3s infinite alternate;
     
 }
+.mobileStatsContainer{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+}
+#masterMobileStatsDiv{
+  display: flex;
+  widtH: 100vw;
+  text-align: center;
+}
+.mobileStatsDiv{
+  font-size: 1.5em;
+  text-align: center;
+  position: relative;
+  height: 7vh;
+  width: 25%;
+  border: 2px dashed rgba(21, 22, 32, 0.98);
+  background-color: rgba(255, 255, 255, 0.77);
+  border-radius: 7%;
+}
 
 @keyframes glow {
   from {
@@ -596,6 +620,30 @@ and (orientation : portrait) {
     height: 20vh;
     width: 30vw;
   }
+
+  /* .mobileStatsContainer{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    background-color: dodgerblue;
+  }
+  #masterMobileStatsDiv{
+    display: flex;
+    widtH: 100vw;
+  }
+  .mobileStatsDiv{
+    position: relative;
+    height: 10vh;
+    width: 25%;
+    display: flex;
+    border: 1px solid pink;
+  } */
+
+
 
 
  }
