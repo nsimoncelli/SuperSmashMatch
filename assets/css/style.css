@@ -110,7 +110,7 @@ h1 {
   text-align: center;
   width: 100vw;
   height: 10vh;
-  display: flex;
+  display: none;
   flex-direction: row;
 }
 #masterMobileStatsDiv{
@@ -533,6 +533,9 @@ flex-direction: column;
 and (min-device-width : 414px) 
 and (max-device-width : 736px) 
 and (orientation : landscape) { 
+  .title{
+    margin-top: 0;
+  }
   .statsDiv{
     display: none;
   }
@@ -544,6 +547,9 @@ and (orientation : landscape) {
   }
   .card{
     width: 15%;
+  }
+  .mobileStatsContainer{
+    display: flex;
   }
 }
 /*iphone 6/7/8 plus vertical*/
@@ -573,6 +579,9 @@ and (orientation : portrait) {
     .cardContainer>.card:nth-child(17){
       margin-left: 23%;
     }
+    .mobileStatsContainer{
+      display: flex;
+    }
     
 
  }
@@ -593,7 +602,7 @@ and (orientation : portrait) {
     width: 70%;
   }
   .cardContainer{
-    left: 2%;
+    left: 3.5%;
     /* height: 200%; */
     width: 100%;
   }
@@ -621,28 +630,9 @@ and (orientation : portrait) {
     width: 30vw;
   }
 
-  /* .mobileStatsContainer{
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    width: 100vw;
-    height: 10vh;
+  .mobileStatsContainer{
     display: flex;
-    flex-direction: row;
-    background-color: dodgerblue;
   }
-  #masterMobileStatsDiv{
-    display: flex;
-    widtH: 100vw;
-  }
-  .mobileStatsDiv{
-    position: relative;
-    height: 10vh;
-    width: 25%;
-    display: flex;
-    border: 1px solid pink;
-  } */
-
 
 
 
