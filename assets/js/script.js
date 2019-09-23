@@ -27,7 +27,7 @@ function intializeApp() {
     addModalCloseHandler();
     displayStats();
     $('.card').click(handleCardClick);
-    themeSongs();
+    // themeSongs();
 }
 
 // function themeSongs(){
@@ -76,7 +76,6 @@ function handleCardClick(event) {
     }
 
     if (matches === max_matches) {
-        // stopMusic();
         myModal();
         resetStats();
 
@@ -153,9 +152,9 @@ function addModalCloseHandler() {
 
 function displayStats() {
     var accuracyResults = calculateAccuracy();
-    $('#accuracy').text(accuracyResults + "%");
+    $('.accuracy').text(accuracyResults + "%");
     $('#gamesPlayed').text(games_played);
-    $('#attemptedGames').text(attempts);
+    $('.attemptedGames').text(attempts);
 }
 
 function resetStats() {
