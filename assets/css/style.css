@@ -254,7 +254,7 @@ h1 {
     .cardContainer {
       width: 90%;
       height: 90%;
-      left: 3%;
+      left: 5%;
   }
   .masterStatsDiv{
     display: none;
@@ -266,7 +266,7 @@ h1 {
   }
   .mobileStatsContainer{
     display: flex;
-    font-size: 2em;
+    font-size: 3em;
   }
   .cardContainer>.card:nth-child(17){
     margin-left: 24%;
@@ -284,10 +284,11 @@ and (orientation : landscape) {
   }
   body{
     background-image: url(/assets/images/ipad-landscape-background.jpg);
-    background-size: 1024px 768px;
+    background-size: 1080px 810px;
   }
   .mobileStatsContainer{
     display: flex;
+    left: 1.5%;
   }
   .cardContainer {
     height:75%;
@@ -321,6 +322,7 @@ and (-webkit-min-device-pixel-ratio: 1)
 
   .mobileStatsContainer{
     display: flex;
+    font-size: 2em;
   }
   body{
     background-image: url(/assets/images/vertical-ipad.jpeg);
