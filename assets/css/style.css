@@ -399,14 +399,17 @@ and (min-device-width : 375px)
 and (max-device-width : 812px) 
 and (-webkit-device-pixel-ratio : 3)
 and (orientation : portrait)  {
-  body{
+  /* body{
     background-image: url("/assets/images/MM-mobile-vertical.jpg");
     background-size: auto;
-  }
+  } */
   main{
     height: 80vh;
     width: 100vw;
     display: inline-block;
+  }
+  .mobileStatsContainer{
+    display: flex;
   }
   .smashTitle{
     width: 100%;
@@ -482,6 +485,9 @@ and (max-device-width : 812px)
 and (orientation : landscape){
 body{
   background-size: 900px;
+}
+.mobileStatsContainer{
+  display: flex;
 }
   .card{
     width: 15vw;
