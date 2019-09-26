@@ -28,29 +28,9 @@ function intializeApp() {
     displayStats();
     $('.card').click(handleCardClick);
     $('.gameReset').click(resetGame);
-    // themeSongs();
+
 }
 
-// function themeSongs(){
-//     isPlaying = true;
-//     hyruleSong.play();
-//     hyruleIsPlaying= true;
-//     hyruleSong.addEventListener('ended', function(){
-//         mushroomKingdom.play();
-//         mushroomIsPlaying = true
-//         hyruleIsPlaying = false
-//     },false);
-//     mushroomKingdom.addEventListener('ended', function(){
-//         mushroomIsPlaying = false;
-//         dreamlandSong.play();
-//         dreamLandIsPlaying = true;
-//     })
-//     dreamlandSong.addEventListener('ended', function(){
-//         dreamLandIsPlaying = false;
-//         hyruleSong.play();
-//         hyruleIsPlaying = true;
-//     })
-// }
 
 function handleCardClick(event) {
     clickPunchSounds();
