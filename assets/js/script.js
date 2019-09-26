@@ -27,6 +27,7 @@ function intializeApp() {
     addModalCloseHandler();
     displayStats();
     $('.card').click(handleCardClick);
+    $('.gameReset').click(resetGame);
     // themeSongs();
 }
 
@@ -156,6 +157,7 @@ function displayStats() {
     $('#gamesPlayed').text(games_played);
     $('.attemptedGames').text(attempts);
 }
+
 
 function resetStats() {
     matches = null;
