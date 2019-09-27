@@ -1,10 +1,5 @@
 $(document).ready(intializeApp);
-// var mushroomKingdom = new Audio("./assets/images/mushroomkingdom.mp3");
-// var mushroomIsPlaying = false;
-// var hyruleSong = new Audio("./assets/images/hyrulecastle.mp3");
-// var hyruleIsPlaying = false;
-// var dreamlandSong = new Audio("./assets/images/Dreamland.mp3");
-// var dreamLandIsPlaying = false;
+
 var victorySound = new Audio("./assets/images/victorySong.mp3");
 var myAudio = document.getElementById("myAudio");
 var audienceDissapoint = new Audio("./assets/images/audience_dissapoint.wav");
@@ -28,7 +23,7 @@ function intializeApp() {
     displayStats();
     $('.card').click(handleCardClick);
     $('.gameReset').click(resetGame);
-
+    $('#myModal').click(resetStats);
 }
 
 
@@ -57,14 +52,16 @@ function handleCardClick(event) {
     }
 
     if (matches === max_matches) {
-        myModal();
-        resetStats();
-
+        resetGameCompletely();
 
     }
     displayStats();
 }
 
+function resetGameCompletely(){
+    setTimeout(myModal, 1000);
+    
+}
 
 function clickPunchSounds(){
     var randomPunchGen = Math.ceil(Math.random()*3);
@@ -101,30 +98,18 @@ function calculateAccuracy() {
     }
 }
 
-// function stopMusic(){
-//     if(hyruleIsPlaying){
-//         hyruleSong.pause();
-//         hyruleIsPlaying = false;
-//     }else if(mushroomIsPlaying){
-//         mushroomKingdom.pause();
-//         mushroomIsPlaying = false;
-//     }else if(dreamLandIsPlaying){
-//         dreamlandSong.pause();
-//         dreamLandIsPlaying = false;
-//     }
-// }
+
 function myModal() {
     victorySound.play();
     setTimeout(function() {
         $('.modal').css('display', 'block');
-
     }, 500);
 
 }
 
 
 function addModalCloseHandler() {
-
+    
     $("body").click(function() {
         $(".modal").css('display', 'none');
     });
