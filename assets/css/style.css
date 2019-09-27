@@ -127,6 +127,10 @@ h1 {
   background-color: rgba(255, 255, 255, 0.77);
   border-radius: 7%;
 }
+.card:hover {
+  border-radius: 50%;
+  filter: drop-shadow(0 0 20px #535FED);
+}
 
 @keyframes glow {
   from {
