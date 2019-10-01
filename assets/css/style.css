@@ -348,7 +348,7 @@ and (-webkit-min-device-pixel-ratio: 1)
     width: 80%;
   }
   .title{
-    margin-top: 2px;
+    margin-top: 3%;
   }
   .masterStatsDiv{
     display: none;
