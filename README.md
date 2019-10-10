@@ -5,6 +5,8 @@
 <summary> &#8592; Click arrow for details</summary>
 
 Project created with jQuery, HTML, and CSS.
+
+Mobile responsive on landscape and portrait for ipad and iphones.
 </details>
 
 ### Project Setup
